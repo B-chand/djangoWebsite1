@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> {% block title %} {% endblock title %} |Biky ice-creams </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .carousel-item img {
+      height: 650px;
+      object-fit: cover;
+    }
+    .carousel-caption h5,
+    .carousel-caption p {
+    text-decoration: underline;
+    text-decoration-color: White; /* White underline with 50% opacity */
+    color: White; /* Makes the text black */
+}
+.thumbnail-img {
+    width: 100%;        /* Image fills the card width */
+    height: 225px;      /* Same as the original SVG placeholder */
+    object-fit: cover;  /* Crops the image nicely without distortion */
+    display: block;     /* Removes inline spacing issues */
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#" style="text-decoration: underline;" >Biky ice-creams</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About Us</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"
+             href="/services"
+             role="button"
+             data-bs-toggle="dropdown"
+             aria-expanded="false">
+            Services
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/services">Ice-creams</a></li>
+            <li><a class="dropdown-item" href="#">Softy</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Family packs</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+        </li>
+
+      </ul>
+
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+    </div>
+  </div>
+</nav>
+{%block body%} 
+{%endblock body%}
+<!-- Bootstrap JS (REQUIRED for dropdown) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
